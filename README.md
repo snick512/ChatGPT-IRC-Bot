@@ -25,14 +25,14 @@ https://platform.openai.com/docs/api-reference
 
 ## Installation
 ```
-git clone https://github.com/knrd1/chatgpt.git
+git clone https://github.com/oiramNet/ChatGPT-IRC-Bot.git
 ```
 
 ## Configuration
-ChatGPT IRC Bot uses __chat.conf__ plaintext file as its configuration file. The package includes an example IRCnet configuration file (__example-chat.conf__) which you can copy and modify.
+ChatGPT IRC Bot uses a plaintext file as its configuration file. The package includes an example IRCnet configuration file (__chat.conf.sample__) which you can copy and modify.
 ```
-cd chatgpt
-cp example-chat.conf chat.conf
+cd ChatGPT-IRC-Bot
+cp chat.conf.sample chat.conf
 ```
 > Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want the bot to behave. This will work only with models connecting to endpoint /v1/chat/completions (see below).
 
@@ -61,6 +61,17 @@ ident = mybot
 realname = My Bot
 password = 
 ```
+
+### Model endpoint compatibility
+ChatGPT IRC Bot can use one of three API models:
+* Models that support endpoint /v1/completions (Legacy)
+  > gpt-3.5-turbo-instruct, babbage-002, davinci-002
+* Models that support endpoint /v1/chat/completions
+  > __gpt-4o-mini__, gpt-4o, gpt-4, gpt-4-turbo, gpt-4-turbo-preview, gpt-3.5-turbo
+* Models that support the creation of an image using endpoint /v1/images/generations
+  > dall-e-2, dall-e-3
+
+We suggest starting experimenting with __gpt-4o-mini__ model. More details about models: https://platform.openai.com/docs/models
 
 ## Running bot
 To start bot, run the command below.
@@ -92,28 +103,17 @@ screen -r
 ## Interaction
 ChatGPT IRC Bot will interact only if you mention its nickname.
 ```
-10:31:12 <@knrd1> ChatGPT: hello, how are you?
+10:31:12 < user> ChatGPT: hello, how are you?
 10:31:14 < ChatGPT> Hi there, I'm doing well, thank you. How about you?
-10:35:56 <@knrd1> ChatGPT: do you like IRC?
+10:35:56 < user> ChatGPT: do you like IRC?
 10:35:59 < ChatGPT> Yes, I like IRC. It is a great way to communicate with people from around the world.
 ```
 
 If you set the model to __dall-e-2__ or __dall-e-3__, the ChatGPT IRC Bot will return a shortened URL to the generated image.
 ```
-17:33:16 <@knrd1> ChatGPT: impressionist style painting: two horses dancing on the street
+17:33:16 < user> ChatGPT: impressionist style painting: two horses dancing on the street
 17:33:23 < ChatGPT> https://tinyurl.com/2hr5uf4w
 ```
-
-## Model endpoint compatibility
-ChatGPT IRC Bot can use three API models:
-* Models that support endpoint /v1/chat/completions
-  > gpt-4o-mini, gpt-4o, gpt-4, gpt-4-turbo, gpt-4-turbo-preview, gpt-3.5-turbo
-* Models that support /v1/completions (Legacy)
-  > gpt-3.5-turbo-instruct, babbage-002, davinci-002
-* Models that support the creation of an image using endpoint /v1/images/generations
-  > dall-e-2, dall-e-3
-
-More details about models: https://platform.openai.com/docs/models
 
 ## Docker
 To build the Docker image, you can use the following command:
