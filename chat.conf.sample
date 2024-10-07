@@ -1,0 +1,23 @@
+[openai]
+api_key = sk-XXXXXXXXXXXXXXX
+
+[chatcompletion]
+model = gpt-3.5-turbo
+role = user
+context = You are helpful and friendly bot on IRC channel #linux.
+temperature = 0.8
+max_tokens = 1000
+top_p = 1
+frequency_penalty = 0
+presence_penalty = 0
+request_timeout = 60
+
+[irc]
+server = open.ircnet.net
+port = 6667
+ssl = false
+channels = #linux,#github
+nickname = MyBot
+ident = mybot
+realname = My Bot
+password = 
