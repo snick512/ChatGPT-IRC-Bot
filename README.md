@@ -1,5 +1,5 @@
 # ChatGPT IRC Bot
-ChatGPT IRC Bot is a simple IRC bot written in Python. It was initially forked from the knrd1/chatgpt but turned into own project.
+ChatGPT IRC Bot is a simple IRC bot written in Python. It was initially forked from the [knrd1/chatgpt](https://github.com/knrd1/chatgpt) but turned into own project.
 It connects to OpenAI endpoints to answer questions or generate images and uses official bindings from OpenAI to interact with the API through HTTP requests.
 
 https://platform.openai.com/docs/api-reference
