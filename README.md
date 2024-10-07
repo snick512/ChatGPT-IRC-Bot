@@ -33,7 +33,7 @@ ChatGPT IRC Bot uses a plaintext file as its configuration file. The package inc
 cd ChatGPT-IRC-Bot
 cp chat.conf.sample chat.conf
 ```
-> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want it to behave. This will work only with models connecting to endpoint __/v1/chat/completions__ ([see below](#Model endpoint compatibility)).
+> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want it to behave. This will only work with the models connecting to the endpoint __/v1/chat/completions__ ([see below](#ANCHOR1)).
 
 ```
 [openai]
@@ -65,6 +65,7 @@ password =
 ChatGPT IRC Bot can use one of three API models:
 * Models that support endpoint __/v1/completions__ (Legacy)
   > gpt-3.5-turbo-instruct, babbage-002, davinci-002
+#ANCHOR1
 * Models that support endpoint __/v1/chat/completions__
   > __gpt-4o-mini__, gpt-4o, gpt-4, gpt-4-turbo, gpt-4-turbo-preview, gpt-3.5-turbo
 * Models that support the creation of an image using endpoint __/v1/images/generations__
@@ -73,7 +74,7 @@ ChatGPT IRC Bot can use one of three API models:
 We suggest starting experimenting with __gpt-4o-mini__ model. More details about models can be found [here](https://platform.openai.com/docs/models).
 
 ## Running bot
-To start the bot, run the command below.
+To start the bot, you can just run the command below.
 * Debian/Ubuntu/RedHat/CentOS
   ```
   python3 chatgpt.py chat.conf
