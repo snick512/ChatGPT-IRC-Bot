@@ -33,7 +33,7 @@ ChatGPT IRC Bot uses a plaintext file as its configuration file. The package inc
 cd ChatGPT-IRC-Bot
 cp chat.conf.sample chat.conf
 ```
-> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want it to behave. This will work only with models connecting to endpoint __/v1/chat/completions__ ([see below](### Model endpoint compatibility)).
+> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want it to behave. This will work only with models connecting to endpoint __/v1/chat/completions__ ([see below](#Model endpoint compatibility)).
 
 ```
 [openai]
