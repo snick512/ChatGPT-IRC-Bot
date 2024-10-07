@@ -4,7 +4,7 @@ __ChatGPT IRC Bot__ is a simple IRC bot written in Python. It was initially fork
 ## Prerequisites
 1. Create an account and obtain your API key: https://platform.openai.com/account/api-keys
 2. Install Python3 and the official Python bindings (__openai__: 0.28.0, __0.28.1__; __pyshorteners__)
-   > Note that only version __0.28.x__ of __openai__ is supported.
+   > Note that only version __0.28.x__ of __openai__ is supported, and the latest version is __0.28.1__.
    * Debian/Ubuntu
      ```
      apt install python3 python3-pip
@@ -22,7 +22,7 @@ __ChatGPT IRC Bot__ is a simple IRC bot written in Python. It was initially fork
      ```
 
 ## Installation
-Clone the package using the below command. It will copy files into __ChatGPT-IRC-Bot__ which you can later rename if you wish.
+Clone the package using the below command. It will copy files into the __ChatGPT-IRC-Bot__ directory, which you can later rename.
 ```
 git clone https://github.com/oiramNet/ChatGPT-IRC-Bot.git
 ```
@@ -33,7 +33,7 @@ ChatGPT IRC Bot uses a plaintext file as its configuration file. The package inc
 cd ChatGPT-IRC-Bot
 cp chat.conf.sample chat.conf
 ```
-> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want the bot to behave. This will work only with models connecting to endpoint /v1/chat/completions (see below).
+> Variable __context__ is optional, you can leave it blank or enter what you want the bot to know and how you want it to behave. This will work only with models connecting to endpoint __/v1/chat/completions__ ([see below](### Model endpoint compatibility)).
 
 ```
 [openai]
@@ -70,7 +70,7 @@ ChatGPT IRC Bot can use one of three API models:
 * Models that support the creation of an image using endpoint __/v1/images/generations__
   > dall-e-2, dall-e-3
 
-We suggest starting experimenting with __gpt-4o-mini__ model. More details about models: https://platform.openai.com/docs/models
+We suggest starting experimenting with __gpt-4o-mini__ model. More details about models can be found [here](https://platform.openai.com/docs/models).
 
 ## Running bot
 To start the bot, run the command below.
