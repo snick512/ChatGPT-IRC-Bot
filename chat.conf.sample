@@ -2,9 +2,9 @@
 api_key = sk-XXXXXXXXXXXXXXX
 
 [chatcompletion]
-model = gpt-3.5-turbo
+model = gpt-4o-mini
 role = user
-context = You are helpful and friendly bot on IRC channel #linux.
+context = 
 temperature = 0.8
 max_tokens = 1000
 top_p = 1
@@ -16,8 +16,8 @@ request_timeout = 60
 server = open.ircnet.net
 port = 6667
 ssl = false
-channels = #linux,#github
-nickname = MyBot
-ident = mybot
-realname = My Bot
+channels = #oiram
+nickname = SampleBot
+ident = samplebot
+realname = Sample Bot
 password = 
