@@ -100,18 +100,19 @@ screen -r
 ```
 
 ## Interaction
-ChatGPT IRC Bot will interact only if you mention its nickname.
+ChatGPT IRC Bot will interact only if you direct your question using its nickname.
 ```
-10:31:12 < user> ChatGPT: hello, how are you?
-10:31:14 < ChatGPT> Hi there, I'm doing well, thank you. How about you?
-10:35:56 < user> ChatGPT: do you like IRC?
-10:35:59 < ChatGPT> Yes, I like IRC. It is a great way to communicate with people from around the world.
+12:34:12 < user> SampleBot: how are you?
+12:34:13 < SampleBot> I'm just a computer program, so I don't have feelings, but I'm here and ready to help you! How can I assist you today?
+12:56:21 < user> SampleBot: do you like IRC?
+12:56:22 < SampleBot> As an AI, I don't have personal preferences or feelings, but I can provide information about IRC! Internet Relay Chat (IRC) is a popular protocol for real-time communication and has been used for
+decades. Many people appreciate it for its simplicity and the sense of community it fosters. If you have specific questions or topics about IRC, feel free to ask!
 ```
 
 If you set the model to __dall-e-2__ or __dall-e-3__, the ChatGPT IRC Bot will return a shortened URL to the generated image.
 ```
-17:33:16 < user> ChatGPT: impressionist style painting: two horses dancing on the street
-17:33:23 < ChatGPT> https://tinyurl.com/2hr5uf4w
+13:14:05 < user> SampleBot: red apples on the table
+13:14:35 < SampleBot> https://tinyurl.com/1a2b3c4d
 ```
 
 ## Docker
