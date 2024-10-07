@@ -1,12 +1,10 @@
 # ChatGPT IRC Bot
-ChatGPT IRC Bot is a simple IRC bot written in Python. It was initially forked from the [knrd1/chatgpt](https://github.com/knrd1/chatgpt) but turned into own project.
-It connects to OpenAI endpoints to answer questions or generate images and uses official bindings from OpenAI to interact with the API through HTTP requests.
-
-https://platform.openai.com/docs/api-reference
+__ChatGPT IRC Bot__ is a simple IRC bot written in Python. It was initially forked from the [knrd1/chatgpt](https://github.com/knrd1/chatgpt) but turned into its own project. It connects to __OpenAI__ endpoints to answer questions or generate images and uses official bindings from __OpenAI__ to interact with the API through the HTTP requests. You can find more details about API [here](https://platform.openai.com/docs/api-reference).
 
 ## Prerequisites
 1. Create an account and obtain your API key: https://platform.openai.com/account/api-keys
 2. Install Python3 and the official Python bindings (__openai__: 0.28.0, __0.28.1__; __pyshorteners__)
+   > Note that only version __0.28.x__ of __openai__ is supported.
    * Debian/Ubuntu
      ```
      apt install python3 python3-pip
@@ -24,12 +22,13 @@ https://platform.openai.com/docs/api-reference
      ```
 
 ## Installation
+Clone the package using the below command. It will copy files into __ChatGPT-IRC-Bot__ which you can later rename if you wish.
 ```
 git clone https://github.com/oiramNet/ChatGPT-IRC-Bot.git
 ```
 
 ## Configuration
-ChatGPT IRC Bot uses a plaintext file as its configuration file. The package includes an example IRCnet configuration file (__chat.conf.sample__) which you can copy and modify.
+ChatGPT IRC Bot uses a plaintext file as its configuration file. The package includes an example configuration file (__chat.conf.sample__) set to connect to IRCnet. You can copy and modify it.
 ```
 cd ChatGPT-IRC-Bot
 cp chat.conf.sample chat.conf
@@ -41,9 +40,9 @@ cp chat.conf.sample chat.conf
 api_key = sk-XXXXXXXXXXXXXXX
 
 [chatcompletion]
-model = gpt-3.5-turbo
+model = gpt-4o-mini
 role = user
-context = You are a helpful and friendly bot on IRC channel #linux.
+context = 
 temperature = 0.8
 max_tokens = 1000
 top_p = 1
@@ -55,26 +54,26 @@ request_timeout = 60
 server = open.ircnet.net
 port = 6667
 ssl = false
-channels = #linux,#github
-nickname = MyBot
-ident = mybot
-realname = My Bot
+channels = #oiram
+nickname = SampleBot
+ident = samplebot
+realname = Sample Bot
 password = 
 ```
 
 ### Model endpoint compatibility
 ChatGPT IRC Bot can use one of three API models:
-* Models that support endpoint /v1/completions (Legacy)
+* Models that support endpoint __/v1/completions__ (Legacy)
   > gpt-3.5-turbo-instruct, babbage-002, davinci-002
-* Models that support endpoint /v1/chat/completions
+* Models that support endpoint __/v1/chat/completions__
   > __gpt-4o-mini__, gpt-4o, gpt-4, gpt-4-turbo, gpt-4-turbo-preview, gpt-3.5-turbo
-* Models that support the creation of an image using endpoint /v1/images/generations
+* Models that support the creation of an image using endpoint __/v1/images/generations__
   > dall-e-2, dall-e-3
 
 We suggest starting experimenting with __gpt-4o-mini__ model. More details about models: https://platform.openai.com/docs/models
 
 ## Running bot
-To start bot, run the command below.
+To start the bot, run the command below.
 * Debian/Ubuntu/RedHat/CentOS
   ```
   python3 chatgpt.py chat.conf
@@ -84,7 +83,7 @@ To start bot, run the command below.
   python3.11 chatgpt.py chat.conf
   ```
 
-Use __screen__ to run the bot in the background and keep it running even after you log out of your session.
+You can use the __screen__ command to run it in the background and keep it running even after you log out of your session.
 * Debian/Ubuntu/RedHat/CentOS
   ```
   screen python3 chatgpt.py chat.conf
