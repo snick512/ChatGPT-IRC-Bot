@@ -106,9 +106,9 @@ while True:
                 print("Invited into channel " + data.split(" :")[1].strip() + ". Joining...")
         elif command == "PRIVMSG" and chunk[2].startswith("#") and chunk[3] == ":" + nickname + ":":
             channel = chunk[2].strip()
-           user_input = data.split(nickname + ":")[1].strip()
-           prompt_prefix = config.get('chatcompletion', 'prompt_prefix', fallback="Answer the following question as helpfully as possible:\n")
-           question = f"{prompt_prefix} {user_input}"
+            user_input = data.split(nickname + ":")[1].strip()
+            prompt_prefix = config.get('chatcompletion', 'prompt_prefix', fallback="Answer the following question as helpfully as possible:\n")
+            question = f"{prompt_prefix} {user_input}"
 
            
            
