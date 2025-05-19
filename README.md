@@ -49,6 +49,8 @@ top_p = 1
 frequency_penalty = 0
 presence_penalty = 0
 request_timeout = 60
+context = You are a professor.
+prompt_prefix = Precise answers only, nothing additional. Provide answers in the form of only 255 characters per line to avoid multiple line outputs as much as possible. If a list is requested, provide it in the form of 255 characters, or in the form of a conversation to avoid multiple line outputs.
 
 [irc]
 server = open.ircnet.net
